@@ -1,5 +1,8 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
+from telegram.ext import (
+    ApplicationBuilder, CommandHandler, CallbackQueryHandler,
+    ContextTypes, WebhookSettings
+)
 import random
 
 # أذكار عامة
@@ -118,7 +121,9 @@ app.add_handler(CallbackQueryHandler(button_handler))
 
 # إعداد Webhook باسم التطبيق الجديد
 app.run_webhook(
-    listen="0.0.0.0",
-    port=10000,
-    webhook_url="https://adhkar-bot-3.onrender.com"
+    webhook_settings=WebhookSettings(
+        listen="0.0.0.0",
+        port=10000,
+        webhook_url="https://adhkat-bot-4.onrender.com"
+    )
 )
