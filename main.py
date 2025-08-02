@@ -152,6 +152,6 @@ app.add_handler(CallbackQueryHandler(button_handler))
 app.run_webhook(
     listen="0.0.0.0",
     port=10000,
-    webhook_url="https://adhkar-bot-1.onrender.com"
+    webhook_url="https://adhkar-bot-2.onrender.com"
 )
 
