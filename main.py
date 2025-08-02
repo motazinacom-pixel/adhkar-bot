@@ -114,7 +114,7 @@ sura_al_mulk = """📖 سورة الملك كاملة (30 آية) بِسْمِ �
 
 
 
-بدء البوت بزر
+#بدء البوت بزر
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE): keyboard = [ [InlineKeyboardButton("📖 سورة الملك", callback_data='mulk')], [InlineKeyboardButton("☀️ أذكار الصباح", callback_data='sabah')], [InlineKeyboardButton("🌙 أذكار المساء", callback_data='masaa')], [InlineKeyboardButton("🕊️ ذكر عشوائي", callback_data='random')], [InlineKeyboardButton("😴 أذكار النوم", callback_data='sleep')] ] reply_markup = InlineKeyboardMarkup(keyboard) await update.message.reply_text('اختر من القائمة:', reply_markup=reply_markup)
 
