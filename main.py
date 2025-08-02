@@ -115,8 +115,16 @@ sura_al_mulk = """📖 سورة الملك كاملة (30 آية) بِسْمِ �
 
 
 #بدء البوت بزر
-
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE): keyboard = [ [InlineKeyboardButton("📖 سورة الملك", callback_data='mulk')], [InlineKeyboardButton("☀️ أذكار الصباح", callback_data='sabah')], [InlineKeyboardButton("🌙 أذكار المساء", callback_data='masaa')], [InlineKeyboardButton("🕊️ ذكر عشوائي", callback_data='random')], [InlineKeyboardButton("😴 أذكار النوم", callback_data='sleep')] ] reply_markup = InlineKeyboardMarkup(keyboard) await update.message.reply_text('اختر من القائمة:', reply_markup=reply_markup)
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    keyboard = [
+        [InlineKeyboardButton("📖 سورة الملك", callback_data='mulk')],
+        [InlineKeyboardButton("☀️ أذكار الصباح", callback_data='sabah')],
+        [InlineKeyboardButton("🌙 أذكار المساء", callback_data='masaa')],
+        [InlineKeyboardButton("🕊️ ذكر عشوائي", callback_data='random')],
+        [InlineKeyboardButton("😴 أذكار النوم", callback_data='sleep')]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await update.message.reply_text('اختر من القائمة:', reply_markup=reply_markup)
 
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE): query = update.callback_query await query.answer() data = query.data if data == 'mulk': await query.edit_message_text(sura_al_mulk) elif data == 'sabah': await query.edit_message_text("☀️ أذكار الصباح:\n" + "\n".join(adhkar_sabah)) elif data == 'masaa': await query.edit_message_text("🌙 أذكار المساء:\n" + "\n".join(adhkar_masaa)) elif data == 'sleep': await query.edit_message_text("😴 أذكار قبل النوم:\n" + "\n".join(adhkar_sleep)) elif data == 'random': await query.edit_message_text("🕊️ ذكر عشوائي:\n" + random.choice(adhkar_general))
 
