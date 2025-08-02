@@ -144,7 +144,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 #ربط الأوامر
 
-app = ApplicationBuilder().token("8406504256:AAFpEuWrnTbSnbCdIp9IesOcQCHxHhrOuDo").build()
+app = ApplicationBuilder().token("8406504256:AAFFZBPEgVzblybO6psClaGinF4JbXGMFnA").build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CallbackQueryHandler(button_handler))
