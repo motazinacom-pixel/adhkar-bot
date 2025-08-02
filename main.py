@@ -1,6 +1,10 @@
-from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
-from telegram.ext.webhookhandler import WebhookSettings      
-import random
+from telegram import Update
+from telegram.ext import (
+    ApplicationBuilder,
+    CommandHandler,
+    ContextTypes,
+    CallbackQueryHandler
+)
 
 # أذكار عامة
 adhkar_general = [
