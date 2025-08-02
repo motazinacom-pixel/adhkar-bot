@@ -142,7 +142,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == 'random':
         await query.edit_message_text("🕊️ ذكر عشوائي:\n" + random.choice(adhkar_general))
 
-ربط الأوامر
+#ربط الأوامر
 
 app = ApplicationBuilder().token("8406504256:AAEwjzZ5HdRh3S-GKa94JSYqiwSYlNiCOfA").build()
 
